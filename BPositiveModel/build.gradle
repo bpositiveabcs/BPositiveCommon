@@ -23,19 +23,24 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Lombok for simplifying boilerplate code in models
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // Include javax.persistence API if you are using JPA annotations
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+
+    // If you are using validation annotations
+    implementation 'org.hibernate.validator:hibernate-validator:7.0.1.Final'
+
+    // JUnit for testing if necessary
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+jar {
+    archivesBaseName = 'BPositiveCommon'
+    version = '0.1.0'
+}
 tasks.named('test') {
     useJUnitPlatform()
-}
-jar {
-    manifest {
-        attributes(
-                'Implementation-Title': 'BPositive Model',
-                'Implementation-Version': 17
-        )
-    }
 }
