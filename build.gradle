@@ -9,12 +9,14 @@ java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
+
 jar {
     archivesBaseName = 'BPositiveCommon'
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+
 repositories {
     mavenCentral()
 }
@@ -22,18 +24,23 @@ repositories {
 dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-
-    // Add other necessary libraries, such as JPA or validation annotations if needed
-    // Only include Spring Boot if you are using its features directly in your models
-    // implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-    // JUnit for testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.5'
 }
+
 configurations {
     apiElements {
         outgoing.artifact(tasks.jar) {
-            // Configure attributes here
+            attributes {
+                attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_API))
+                attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category, Category.LIBRARY))
+                attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling, Bundling.EXTERNAL))
+                attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+            }
+        }
+    }
+    runtimeElements {
+        extendsFrom apiElements
+        outgoing.artifact(tasks.jar) {
             attributes {
                 attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_RUNTIME))
                 attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category, Category.LIBRARY))
