@@ -1,7 +1,5 @@
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '3.2.5'
-    id 'io.spring.dependency-management' version '1.1.4'
+    id 'java-library'
 }
 
 group = 'bpos.common'
@@ -11,36 +9,18 @@ java {
     sourceCompatibility = '17'
 }
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-    // Lombok for simplifying boilerplate code in models
-    compileOnly 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // Include javax.persistence API if you are using JPA annotations
-    implementation 'javax.persistence:javax.persistence-api:2.2'
+    // Add other necessary libraries, such as JPA or validation annotations if needed
+    // Only include Spring Boot if you are using its features directly in your models
+    // implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    // If you are using validation annotations
-    implementation 'org.hibernate.validator:hibernate-validator:7.0.1.Final'
-
-    // JUnit for testing if necessary
+    // JUnit for testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-jar {
-    archivesBaseName = 'BPositiveCommon'
-    version = '0.1.0'
-}
-tasks.named('test') {
-    useJUnitPlatform()
 }
