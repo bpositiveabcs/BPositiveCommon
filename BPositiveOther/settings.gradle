@@ -1,3 +1,4 @@
 rootProject.name = 'BPositiveOther'
 include 'BPositiveModel'
-project(':BPositiveModel').projectDir = new File('../BPositiveModel')
+//project(':BPositiveModel').projectDir = new File('../BPositiveModel')
+project(':BPositiveModel').projectDir = new File(settingsDir, '../BPositiveModel')

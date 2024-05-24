@@ -26,7 +26,7 @@ dependencies {
     implementation 'org.testng:testng:7.1.0'
     implementation 'org.springframework.boot:spring-boot-starter'
 //    implementation 'org.springframework.boot:spring-boot-starter-autoconfigure'
-    implementation project(path: ':BPositiveModel')
+    implementation project(':BPositiveModel')
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.5'
