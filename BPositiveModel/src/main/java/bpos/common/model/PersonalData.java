@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
 import java.util.Objects;
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonalData extends Entity<Integer>{
     private Address address;
     private String phoneNumber;
@@ -13,7 +13,7 @@ public class PersonalData extends Entity<Integer>{
     private String lastName;
     private String cnp;
     private String sex;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDate birthDate;
 
     public PersonalData(Address address, String phoneNumber, String firstName, String lastName, String cnp, String sex, LocalDate birthDate) {

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Coupon extends Entity<Integer>{
 
@@ -13,7 +13,7 @@ public class Coupon extends Entity<Integer>{
     private String name;
     private String provider;
     private String offer;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime unavailableToClaimFrom;
     private Integer validityPeriod;
     private String series;

@@ -3,7 +3,7 @@ package bpos.common.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Objects;
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Student extends Person{
     private Integer year;
