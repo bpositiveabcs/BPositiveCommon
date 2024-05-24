@@ -1,6 +1,9 @@
 package bpos.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Objects;
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Center extends Entity<Integer>{
     private String institutionDetails;

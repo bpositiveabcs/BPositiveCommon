@@ -1,7 +1,10 @@
 package bpos.common.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Coupon extends Entity<Integer>{
 
