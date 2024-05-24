@@ -1,5 +1,7 @@
 package bpos.common.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -8,6 +10,7 @@ public class RetrievedCoupons extends Entity<Integer> {
     private Coupon coupon;
     private int id_persoana;
     private String series;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime receivedDate;
     private LocalDateTime expirationDate;
 

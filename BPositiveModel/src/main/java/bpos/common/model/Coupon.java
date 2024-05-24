@@ -1,5 +1,6 @@
 package bpos.common.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDateTime;
@@ -12,6 +13,7 @@ public class Coupon extends Entity<Integer>{
     private String name;
     private String provider;
     private String offer;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime unavailableToClaimFrom;
     private Integer validityPeriod;
     private String series;

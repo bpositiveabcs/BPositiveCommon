@@ -1,5 +1,6 @@
 package bpos.common.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
@@ -12,6 +13,7 @@ public class PersonalData extends Entity<Integer>{
     private String lastName;
     private String cnp;
     private String sex;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDate birthDate;
 
     public PersonalData(Address address, String phoneNumber, String firstName, String lastName, String cnp, String sex, LocalDate birthDate) {
