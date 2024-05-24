@@ -1,4 +1,4 @@
-rootProject.name = 'BPositiveCommon'
-include 'BPositiveModel'
-include 'BPositiveOther'
-
+rootProject.name = 'BPositiveProjects'
+include 'BPositiveCommon:BPositiveModel'
+include 'BPositiveCommon:BPositiveOther'
+include 'BPositiveCommon'
