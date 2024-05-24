@@ -38,7 +38,17 @@ dependencies {
 
 
 }
+tasks.withType(ProcessResources) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 
+jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 configurations {
     apiElements {
         outgoing.artifact(tasks.jar) {
