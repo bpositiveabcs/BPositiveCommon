@@ -1,7 +1,7 @@
 package bpos.common.model;
 
 import java.util.Objects;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LogInfo extends Entity<Integer>{
     private String username;
     private String password;

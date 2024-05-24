@@ -2,7 +2,7 @@ package bpos.common.model;
 
 import java.time.LocalDate;
 import java.util.Objects;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonalData extends Entity<Integer>{
     private Address address;
     private String phoneNumber;
