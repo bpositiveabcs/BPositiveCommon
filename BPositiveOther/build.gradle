@@ -25,7 +25,8 @@ jar {
 dependencies {
     implementation 'org.testng:testng:7.1.0'
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-autoconfigure'
+//    implementation 'org.springframework.boot:spring-boot-starter-autoconfigure'
+    implementation project(path: ':BPositiveModel')
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.5'
@@ -33,6 +34,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.3'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.3'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1'
 }
 
 configurations {
