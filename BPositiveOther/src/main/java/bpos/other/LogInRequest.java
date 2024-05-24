@@ -1,3 +1,5 @@
+package bpos.other;
+
 public class LogInRequest {
     private String username;
     private String password;

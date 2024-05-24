@@ -1,0 +1,48 @@
+plugins {
+    id 'java-library'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+group = 'bpos.other'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+jar {
+    archivesBaseName = 'BPositiveOther'
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.5'
+}
+
+configurations {
+    apiElements {
+        outgoing.artifact(tasks.jar) {
+            attributes {
+                attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_API))
+                attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category, Category.LIBRARY))
+                attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling, Bundling.EXTERNAL))
+                attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+            }
+        }
+    }
+    runtimeElements {
+        extendsFrom apiElements
+        outgoing.artifact(tasks.jar) {
+            attributes {
+                attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_RUNTIME))
+                attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category, Category.LIBRARY))
+                attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling, Bundling.EXTERNAL))
+                attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 17)
+            }
+        }
+    }
+}
