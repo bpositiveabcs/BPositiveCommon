@@ -20,6 +20,8 @@ public class PersonRequest {
     private String email;
     private String password;
     private String confirmPassword;
+    public PersonRequest() {
+    }
 
     public PersonRequest(String firstName, String lastName, String cnp, String birthday, String sex,
                          String country, String county, String city, String street, String number,
