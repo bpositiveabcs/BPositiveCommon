@@ -15,11 +15,16 @@ public class PersonRequest {
     private String apartment;
     private String floor;
     private String telephone;
+    private String username;
+    private int id;
     private String email;
     private String password;
     private String confirmPassword;
 
-    public PersonRequest(String firstName, String lastName, String cnp, String birthday, String sex, String country, String county, String city, String street, String number, String block, String apartment, String floor, String telephone, String email, String password, String confirmPassword) {
+    public PersonRequest(String firstName, String lastName, String cnp, String birthday, String sex,
+                         String country, String county, String city, String street, String number,
+                         String block, String apartment, String floor, String telephone,
+                         String username,String email, String password, String confirmPassword) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cnp = cnp;
@@ -37,6 +42,7 @@ public class PersonRequest {
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
+        this.username = username;
     }
 
     public String getFirstName() {
