@@ -1,4 +1,4 @@
-package bpos.server.model;
+package bpos.other;
 
 public class PersonRequest {
     private String firstName;
