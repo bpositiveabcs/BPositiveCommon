@@ -21,7 +21,7 @@ public class PersonRequest {
     private String password;
     private String confirmPassword;
     private String bloodType;
-    private String BloodRh;
+    private String bloodRh;
     private Integer eligibility;
     public PersonRequest() {
     }
@@ -30,7 +30,7 @@ public class PersonRequest {
                          String country, String county, String city, String street, String number,
                          String block, String apartment, String floor, String telephone,
                          String username,String email, String password, String confirmPassword,
-                         String bloodType,String BloodRh,Integer eligibility) {
+                         String bloodType,String bloodRh,Integer eligibility) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cnp = cnp;
@@ -50,7 +50,7 @@ public class PersonRequest {
         this.confirmPassword = confirmPassword;
         this.username = username;
         this.bloodType = bloodType;
-        this.BloodRh = BloodRh;
+        this.bloodRh = bloodRh;
         this.eligibility = eligibility;
 
     }
@@ -64,11 +64,11 @@ public class PersonRequest {
     }
 
     public String getBloodRh() {
-        return BloodRh;
+        return bloodRh;
     }
 
     public void setBloodRh(String bloodRh) {
-        BloodRh = bloodRh;
+        this.bloodRh = bloodRh;
     }
 
     public Integer getEligibility() {
