@@ -4,6 +4,7 @@ package bpos.common.model;
 import bpos.common.model.Enums.BloodType;
 import bpos.common.model.Enums.Rh;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -23,6 +24,10 @@ public class MedicalInfo extends Entity<Integer> {
     }
 
     public MedicalInfo() {
+        this.eligibility= false;
+        this.bloodType= BloodType.NOTSET;
+        this.rh= Rh.NOTSET;
+        this.medicalHistory= new ArrayList<>();
 
     }
 
